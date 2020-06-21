@@ -13,7 +13,7 @@ class ParkPolicy < ApplicationPolicy
     end
 
     def create?
-      user.admin?
+      current_user.admin?
     end
   end
 end

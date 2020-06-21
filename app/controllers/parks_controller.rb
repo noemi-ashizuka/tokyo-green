@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
-  skip_after_action :verify_policy_scoped, only: :index, :show
+  skip_after_action :verify_policy_scoped, only: [:index, :show]
 
   def index
     @parks = Park.all
@@ -13,6 +13,7 @@ class ParksController < ApplicationController
 
   def new
     @park = Park.new
+    @park.user = current_user
     authorize @park
   end
 
