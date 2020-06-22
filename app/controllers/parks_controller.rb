@@ -3,7 +3,7 @@ class ParksController < ApplicationController
 
   def index
     @parks = Park.all
-    authorize @parks
+    @parks = policy_scope(Park)
   end
 
   def show
@@ -12,9 +12,13 @@ class ParksController < ApplicationController
   end
 
   def new
-    @park = Park.new
-    @park.user = current_user
-    authorize @park
+    if current_user.admin?
+      @park = Park.new
+      @park.user = current_user
+      authorize @park
+    else
+      redirect_to parks_path
+    end
   end
 
   def create
