@@ -12,17 +12,14 @@ class ParksController < ApplicationController
   end
 
   def new
-    if current_user.admin?
       @park = Park.new
       @park.user = current_user
       authorize @park
-    else
-      redirect_to parks_path
-    end
   end
 
   def create
     @park = Park.new(park_params)
+    @park.user = current_user
     authorize @park
     if @park.save
       redirect_to park_path(@park)
@@ -35,5 +32,9 @@ class ParksController < ApplicationController
 
   def park_params
     params.require(:park).permit(:name, :address, :opening_hours, :description, :facilities, :attractions, :best_season)
+  end
+
+  def authorize_create
+    authorize @park if current_user.admin?
   end
 end

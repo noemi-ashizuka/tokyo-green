@@ -1,1 +1,12 @@
 <h1>Make a new park</h1>
+
+<%if current_user.admin? %>
+  <%= simple_form_for @park do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.submit "Create" %>
+  <% end %>
+<% else %>
+  <p>Only admin can create a new park.</p>
+<% end %>

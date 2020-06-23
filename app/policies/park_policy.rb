@@ -10,7 +10,7 @@ class ParkPolicy < ApplicationPolicy
   end
 
   def new?
-    create?
+    true
   end
 
   def create?
