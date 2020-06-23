@@ -1,5 +1,5 @@
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :user, :record, :error_message_key
 
   def initialize(user, record)
     @user = user

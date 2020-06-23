@@ -12,15 +12,18 @@ class ParksController < ApplicationController
   end
 
   def new
-      @park = Park.new
-      @park.user = current_user
-      authorize @park
+      if !current_user.admin?
+        redirect_to root_path
+      else
+        @park = Park.new
+        authorize @park
+      end
   end
 
   def create
     @park = Park.new(park_params)
     @park.user = current_user
-    authorize @park
+    authorize_create
     if @park.save
       redirect_to park_path(@park)
     else
