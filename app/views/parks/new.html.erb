@@ -6,6 +6,7 @@
     <%= f.input :address %>
     <%= f.input :description, as: :text %>
     <%= f.input :facilities, collection: Park::FACILITIES, as: :check_boxes %>
+    <%= f.input :attractions, collection: Park::ATTRACTIONS, as: :check_boxes %>
     <%= f.submit "Create" %>
   <% end %>
 <% else %>
