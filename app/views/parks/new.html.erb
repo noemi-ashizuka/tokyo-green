@@ -4,7 +4,8 @@
   <%= simple_form_for @park do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
-    <%= f.input :description %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :facilities, collection: Park::FACILITIES, as: :check_boxes %>
     <%= f.submit "Create" %>
   <% end %>
 <% else %>
