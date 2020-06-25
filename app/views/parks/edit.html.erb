@@ -1,0 +1,7 @@
+<h1>Edit the info about the park</h1>
+
+<% if current_user.admin? %>
+  <%= render 'parks/form' %>
+<% else %>
+  <p>Only the admin can edit a new park.</p>
+<% end %>

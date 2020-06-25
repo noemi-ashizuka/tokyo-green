@@ -1,0 +1,10 @@
+ <%= simple_form_for @park do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :opening_hours %>
+    <%= f.input :facilities, collection: Park::FACILITIES, as: :check_boxes %>
+    <%= f.input :attractions, collection: Park::ATTRACTIONS, as: :check_boxes %>
+    <%= f.input :best_season, collection: Park::BEST_SEASON %>
+    <%= f.submit "Submit" %>
+  <% end %>
