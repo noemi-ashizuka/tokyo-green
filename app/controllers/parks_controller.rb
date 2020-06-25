@@ -14,7 +14,7 @@ class ParksController < ApplicationController
 
   def new
       if !current_user.admin?
-        redirect_to root_path
+        raise Pundit::NotAuthorizedError
       else
         @park = Park.new
         authorize @park
