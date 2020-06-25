@@ -32,6 +32,22 @@ class ParksController < ApplicationController
     end
   end
 
+  def edit
+    if !current_user.admin?
+      raise Pundit::NotAuthorizedError
+    else
+      @park = Park.find(params[:id])
+      authorize @park
+    end
+  end
+
+  def update
+    @park = Park.find(params[:id])
+    authorize @park
+    @park.update(park_params)
+    redirect_to park_path(@park)
+  end
+
   private
 
   def park_params
