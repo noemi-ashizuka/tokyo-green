@@ -8,7 +8,19 @@
   }
 }
 
+.navbar-light .navbar-nav .active > .nav-link {
+  color: $light-green;
+ 
+}
 
+.navbar-light .navbar-nav .nav-link {
+  color: $lighter-gray;
+  // font-size: 20px;
+
+  &:hover {
+    color: $medium-green;
+  }
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
