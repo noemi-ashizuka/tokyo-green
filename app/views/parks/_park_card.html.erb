@@ -4,9 +4,10 @@
     <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class:"card-wide-image" %>
   </div>
   <div class="card-wide-right">
-    <p class="card-wide-hours"><%= park.opening_hours %></p>
+    <div class="filler"></div>
     <p class="card-wide-description"><%= park.description %></p>
     <p><%= park.facilities %></p>
     <p><%= park.attractions %></p>
+    <p class="card-wide-hours">Opening Hours: <%= park.opening_hours %></p>
   </div>
 </div>
