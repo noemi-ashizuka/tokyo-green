@@ -1,7 +1,7 @@
 class ParksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   skip_after_action :verify_policy_scoped, only: [:index, :show]
-
+  
   def index
     @parks = Park.all
     @parks = policy_scope(Park)
@@ -31,7 +31,7 @@ class ParksController < ApplicationController
       render :new
     end
   end
-
+  
   def edit
     if !current_user.admin?
       raise Pundit::NotAuthorizedError
