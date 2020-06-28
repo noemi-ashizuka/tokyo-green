@@ -9,11 +9,11 @@ class Park < ApplicationRecord
   before_save :fix_facilities_string, :fix_attractions_string
 
   def fix_facilities_string
-    self.facilities.gsub!(/[\[\]\"]/, "") if attribute_present?("facilities")
+    self.facilities.gsub!(/[\[\]\",]/, "") if attribute_present?("facilities")
   end 
 
   def fix_attractions_string
-    self.attractions.gsub!(/[\[\]\"]/, "") if attribute_present?("attractions")
+    self.attractions.gsub!(/[\[\]\",]/, "") if attribute_present?("attractions")
   end
   
   FACILITIES = ["toilets", "tennis court", "wheelchair accessible", "baby changing", "picnic area", "drink stand", "cafe", "soccer field", "baseball field", "open air stage"]
