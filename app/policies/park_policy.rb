@@ -24,5 +24,9 @@ class ParkPolicy < ApplicationPolicy
   def update?
     user.admin?
   end
+
+  def add_favorite?
+    true
+  end
  
 end

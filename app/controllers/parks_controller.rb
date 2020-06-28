@@ -48,6 +48,11 @@ class ParksController < ApplicationController
     redirect_to park_path(@park)
   end
 
+  def add_favorite
+    current_user.favorite(@park)
+    authorize @park
+  end
+
   private
 
   def park_params
