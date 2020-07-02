@@ -12,8 +12,8 @@
     <% if current_user.favorited?(park) %>
       <button>Remove from favorites</button>
     <% else %>
-      <%= link_to park_add_favorite_path(park), remote: true, method: :put do %>
-        Add to favorite
+      <%= link_to add_favorite_park_path(park), remote: true, method: :put do %>
+        <p>Add to favorite</p>
       <% end %>
     <% end %>  
   </div>

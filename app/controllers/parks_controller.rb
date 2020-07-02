@@ -49,7 +49,12 @@ class ParksController < ApplicationController
   end
 
   def add_favorite
+    @park = Park.find(params[:id])
     current_user.favorite(@park)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
     authorize @park
   end
 
