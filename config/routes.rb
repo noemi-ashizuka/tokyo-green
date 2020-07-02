@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :parks, only: [:index, :show, :new, :create, :edit, :update] do
     put "add_favorites", to: "parks#add_favorite", as: :add_favorite
   end
+
+  resources :users, only: :show
 end
