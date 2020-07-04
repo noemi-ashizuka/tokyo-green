@@ -58,6 +58,16 @@ class ParksController < ApplicationController
     authorize @park
   end
 
+  def remove_favorite
+    @park = Park.find(params[:id])
+    current_user.unfavorite(@park)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+    authorize @park
+  end
+
   private
 
   def park_params

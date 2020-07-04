@@ -28,5 +28,9 @@ class ParkPolicy < ApplicationPolicy
   def add_favorite?
     true
   end
+
+  def remove_favorite?
+    true
+  end
  
 end
