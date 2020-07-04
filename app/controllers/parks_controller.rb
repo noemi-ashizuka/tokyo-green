@@ -1,5 +1,5 @@
 class ParksController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :toggle_favorite]
   skip_after_action :verify_policy_scoped, only: [:index, :show]
   
   def index
@@ -67,6 +67,12 @@ class ParksController < ApplicationController
     end
     authorize @park
   end
+
+  def toggle_favorite
+    @park = Park.find(params[:id])
+    current_user.favorited?(@park) ? current_user.unfavorite(@park) : current_user.favorite(@park)
+  end
+
 
   private
 

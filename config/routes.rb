@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     member do
       put "add_favorite", to: "parks#add_favorite", as: :add_favorite
       put "remove_favorite", to: "parks#remove_favorite", as: :remove_favorite
+      post "toggle_favorite", to: "parks#toggle_favorite", as: :toggle_favorite
     end
   end
+
+  # The member scopes ensure that the id of the favourite is passed into the action
 
   resources :users, only: :show
 end

@@ -9,14 +9,8 @@
     <p><%= park.facilities %></p>
     <p><%= park.attractions %></p>
     <p class="card-wide-hours">Opening Hours: <%= park.opening_hours %></p>
-    <% if current_user.favorited?(park) %>
-      <%= link_to remove_favorite_park_path(park), remote: true, method: :put do %>
-        <p>Remove from favorites</p>
-      <% end %>
-    <% else %>
-      <%= link_to add_favorite_park_path(park), remote: true, method: :put do %>
-        <p>Add to favorite</p>
-      <% end %>
-    <% end %> 
+    <%= link_to toggle_favorite_park_path(park), remote: true, method: :post do %>
+      <%= render 'parks/fav_button', park: park %>
+    <% end %>
   </div>
 </div>
