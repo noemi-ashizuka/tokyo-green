@@ -1,8 +1,15 @@
-let parkId = '<%= @park.id %>'
+var parkId = '<%= @park.id %>'
 
 function toggleFavButton(parkId, innerHTML) {
   let favButton = document.querySelector(`.fav-icon[data-id='${parkId}']`)
+  let buttonText = document.querySelector('.fav-icon p');
   favButton.classList.toggle('btn-green');
+  if (favButton.classList.contains('btn-green')) {
+    buttonText.innerText = "Remove from favorites"
+  }
+  else {
+    buttonText.innerText = "Add to favorites"
+  }
 }
 
 toggleFavButton(parkId, '<%= j render "parks/fav_button", park: @park %>');
