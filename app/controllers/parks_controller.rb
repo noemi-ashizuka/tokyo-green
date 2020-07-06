@@ -48,29 +48,14 @@ class ParksController < ApplicationController
     redirect_to park_path(@park)
   end
 
-  def add_favorite
-    @park = Park.find(params[:id])
-    current_user.favorite(@park)
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
-    end
-    authorize @park
-  end
-
-  def remove_favorite
-    @park = Park.find(params[:id])
-    current_user.unfavorite(@park)
-    respond_to do |format|
-      format.html { redirect_to :back }
-      format.js
-    end
-    authorize @park
-  end
-
   def toggle_favorite
-    @park = Park.find(params[:id])
+    @park = Park.find_by(id: params[:id])
     current_user.favorited?(@park) ? current_user.unfavorite(@park) : current_user.favorite(@park)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+      authorize @park
   end
 
 

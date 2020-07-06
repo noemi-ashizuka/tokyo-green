@@ -9,7 +9,7 @@
     <p><%= park.facilities %></p>
     <p><%= park.attractions %></p>
     <p class="card-wide-hours">Opening Hours: <%= park.opening_hours %></p>
-    <%= link_to toggle_favorite_park_path(park), remote: true, method: :post do %>
+    <%= link_to toggle_favorite_park_path(park), remote: true, method: :post, style: "text-decoration:none;" do %>
       <%= render 'parks/fav_button', park: park %>
     <% end %>
   </div>

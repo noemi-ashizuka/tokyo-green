@@ -5,4 +5,4 @@ function toggleFavButton(parkId, innerHTML) {
   favButton.classList.toggle('btn-green');
 }
 
-toggleFavButton(parkId, '<%= j render 'parks/park', park: @park %>');
+toggleFavButton(parkId, '<%= j render "parks/fav_button", park: @park %>');

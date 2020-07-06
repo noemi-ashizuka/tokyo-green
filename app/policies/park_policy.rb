@@ -25,11 +25,7 @@ class ParkPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def add_favorite?
-    true
-  end
-
-  def remove_favorite?
+  def toggle_favorite?
     true
   end
  

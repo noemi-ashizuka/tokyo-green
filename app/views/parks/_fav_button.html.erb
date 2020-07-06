@@ -1,3 +1,7 @@
-<div class="fav-icon <%= 'btn-green' if current_user.favorited?(park) %>" data-id="<%= park.id %>" >
-  <i class="fas fa-star"></i>
+<div class="fav-icon btn-normal <%= 'btn-green' if current_user.favorited?(park) %>" data-id="<%= park.id %>" >
+  <% if current_user.favorited?(park) %>
+    <p>Remove from favorites</p>
+  <% else %>
+    <p>Add to favorites</p>
+  <% end %>
 <div>
