@@ -1,9 +1,21 @@
 .btn-normal {
-  height: 32px;
-  width: 150px;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
   background-color: $dark-green;
+  a {
+    color: $light-green;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .btn-green {
   background-color: $light-green;
+  a {
+    color: $dark-green;
+  }
 }
