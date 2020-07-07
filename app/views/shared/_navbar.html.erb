@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to parks_path, class: "navbar-brand" do %>
     <i class="fas fa-tree"></i>
   <% end %>
 
@@ -12,10 +12,10 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", "#", class: "nav-link" %>
+          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOut0p3zCtCU9QOj30HH5tVboxRoSPck0mQg&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
