@@ -1,5 +1,5 @@
 <h1>All the parks</h1>
 
 <% @parks.each do |park| %>
-  <%= park.name %>
+  <%= render 'parks/park_thumb', park: park %>
 <% end %>
