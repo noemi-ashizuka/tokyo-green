@@ -1,5 +1,7 @@
 <h1>All the parks</h1>
 
-<% @parks.each do |park| %>
-  <%= render 'parks/park_thumb', park: park %>
-<% end %>
+<div class="card-small-container">
+  <% @parks.each do |park| %>
+    <%= render 'parks/park_thumb', park: park %>
+  <% end %>
+</div>
