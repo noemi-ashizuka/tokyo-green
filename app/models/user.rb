@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   
   has_many :parks
+  has_many :reviews, dependent: :destroy
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
   
