@@ -2,6 +2,7 @@ class Park < ApplicationRecord
   validates :name, :address, presence: true
   belongs_to :admin, class_name: "User", foreign_key: "user_id"
   has_many :reviews, dependent: :destroy
+  has_one_attached :photo
 
   acts_as_favoritable
 

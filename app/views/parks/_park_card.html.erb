@@ -1,7 +1,11 @@
 <div class="card-wide">
   <div class="card-wide-left">
     <h1 class="card-wide-title"><%= park.name %></h1>
-    <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class:"card-wide-image" %>
+    <% if park.photo.attached? %>
+      <%= cl_image_tag park.photo.key %>
+    <% else %>
+      <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class:"card-wide-image" %>
+    <% end %>
   </div>
   <div class="card-wide-right">
     <div class="filler"></div>

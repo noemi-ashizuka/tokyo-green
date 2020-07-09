@@ -1,4 +1,8 @@
 <div class="card-small">
-  <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class: "card-small-img" %>
+  <% if park.photo.attached? %>
+    <%= cl_image_tag park.photo.key, class: "card-small-img" %>
+  <% else %>
+    <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class: "card-small-img" %>
+  <% end %>
   <h3 class="card-small-title"><%= park.name %></h3>
 </div>

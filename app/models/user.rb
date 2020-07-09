@@ -11,6 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   acts_as_favoritor
+  has_one_attached :photo
   
   def set_default_role
     self.role ||= :user

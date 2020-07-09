@@ -6,5 +6,6 @@
     <%= f.input :facilities, collection: Park::FACILITIES, as: :check_boxes, input_html: { multiple: true } %>
     <%= f.input :attractions, collection: Park::ATTRACTIONS, as: :check_boxes, input_html: { multiple: true } %>
     <%= f.input :best_season, collection: Park::BEST_SEASON %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Submit" %>
   <% end %>
