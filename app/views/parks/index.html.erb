@@ -2,6 +2,8 @@
 
 <div class="card-small-container">
   <% @parks.each do |park| %>
-    <%= render 'parks/park_thumb', park: park %>
+    <%= link_to park_path(park), style: "text-decoration:none;", class: "link-simple" do %>
+      <%= render 'parks/park_thumb', park: park %>
+    <% end %>
   <% end %>
 </div>
