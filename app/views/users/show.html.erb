@@ -9,5 +9,7 @@
   <% end %>
 <% end %>
 
-<p><%= link_to "Edit profile", edit_user_path %></p>
+<% if @user == current_user %>
+  <p><%= link_to "Edit profile", edit_user_path %></p>
+<% end %>
 
