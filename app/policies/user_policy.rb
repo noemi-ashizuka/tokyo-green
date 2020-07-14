@@ -14,6 +14,6 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record == user
   end
 end
