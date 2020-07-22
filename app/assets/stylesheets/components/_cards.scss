@@ -54,4 +54,18 @@
   }
 }
 
+.review-card {
+  background-color: white;
+  width: 25%;
+  padding: 24px;
+  margin: 16px;
+
+  .star-rating {
+    color: $light-green;
+  }
+
+  .review-content {
+    font-size: 16px;
+  }
+}
 
