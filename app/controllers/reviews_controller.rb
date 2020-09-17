@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
     @park = Park.find(params[:park_id])
     @review = Review.new(review_params)
     @review.user = current_user
-    @review.park = @parkauthorize @review
+    @review.park = @park
+    authorize @review
     if @review.save
       redirect_to park_path(@park)
     else
@@ -19,6 +20,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit.(:content, :rating)
+    params.require(:review).permit(:content, :rating)
   end
 end
