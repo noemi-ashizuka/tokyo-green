@@ -1,8 +1,22 @@
+<h1>Profile</h1>
+
+<div class= "card-user">
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <% else %>
+    <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOut0p3zCtCU9QOj30HH5tVboxRoSPck0mQg&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+  <% end %>
+  <h3><%= @user.email %></h3>
+</div>
+
+
 <h1>Favorites</h1>
 
 <div class="card-small-container">
   <% @parks.each do |park| %>
-    <%= render 'parks/park_thumb', park: park %>
+    <%= link_to park_path(park) do %>
+      <%= render 'parks/park_thumb', park: park %>
+    <% end %>
   <% end %>
 </div>
 
