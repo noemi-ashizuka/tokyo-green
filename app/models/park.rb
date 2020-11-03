@@ -18,7 +18,7 @@ class Park < ApplicationRecord
     self.attractions.gsub!(/[\[\]\",]/, "") if attribute_present?("attractions")
   end
   
-  FACILITIES = ["toilets", "tennis court", "wheelchair accessible", "baby changing", "picnic area", "drink stand", "cafe", "soccer field", "baseball field", "open air stage"]
+  FACILITIES = ["toilets", "tennis court", "wheelchair accessible", "baby changing", "picnic area", "drink stand", "cafe", "soccer field", "baseball field", "open air stage", "playground"]
   ATTRACTIONS = ["large lawn", "boat riding", "historical site", "nature reserve", "bird watching", "cherry blossoms"]
   BEST_SEASON = ["summer", "autumn", "spring", "winter"]
 end
