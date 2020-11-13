@@ -1,13 +1,12 @@
 <div class="page-container">
   <%= render 'park_card', park: @park %>
-  
-</div>
-<div>
-  <%= render './reviews/review_form', review: @review %>
-</div>
+</div> 
+
+<%= render './reviews/review_form', review: @review %>
+
 <div class="reviews-container">
   <% if @park.reviews.any? %>
-      <div class="card-small-container">
+    <div class="card-small-container">
       <% @park.reviews.each do |review| %>
         <%= render './reviews/review_card', review: review %>
       <% end %>
@@ -16,3 +15,4 @@
     <p>No reviews yet!</p>
   <% end %>
 </div>
+
