@@ -2,7 +2,9 @@
   <%= render 'park_card', park: @park %>
 </div> 
 
+
 <%= render './reviews/review_form', review: @review %>
+
 
 <div class="reviews-container">
   <% if @park.reviews.any? %>
