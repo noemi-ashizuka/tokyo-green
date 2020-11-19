@@ -2,7 +2,7 @@
   <div class="card-wide-left">
     <h1 class="card-wide-title"><%= @park.name %></h1>
     <% if @park.photo.attached? %>
-      <%= cl_image_tag @park.photo.key %>
+      <%= cl_image_tag @park.photo.key, class:"card-wide-image" %>
     <% else %>
       <%= image_tag 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80', class:"card-wide-image" %>
     <% end %>
