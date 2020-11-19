@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_09_012903) do
+ActiveRecord::Schema.define(version: 2020_11_19_105406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 2020_07_09_012903) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_attraction", default: false
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.string "favoritable_type", null: false
     t.bigint "favoritable_id", null: false
@@ -53,13 +60,20 @@ ActiveRecord::Schema.define(version: 2020_07_09_012903) do
     t.index ["scope"], name: "index_favorites_on_scope"
   end
 
+  create_table "park_facilities", force: :cascade do |t|
+    t.bigint "park_id", null: false
+    t.bigint "facility_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["facility_id"], name: "index_park_facilities_on_facility_id"
+    t.index ["park_id"], name: "index_park_facilities_on_park_id"
+  end
+
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "opening_hours"
     t.text "description"
-    t.string "facilities"
-    t.string "attractions"
     t.string "best_season"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -93,6 +107,8 @@ ActiveRecord::Schema.define(version: 2020_07_09_012903) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "park_facilities", "facilities"
+  add_foreign_key "park_facilities", "parks"
   add_foreign_key "parks", "users"
   add_foreign_key "reviews", "parks"
   add_foreign_key "reviews", "users"

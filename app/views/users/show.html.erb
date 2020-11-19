@@ -1,6 +1,6 @@
-<h1>Profile</h1>
+<h1 class="page-title">Profile</h1>
 
-<div class= "card-user">
+<div class= "card-user page-title">
   <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <% else %>
@@ -10,7 +10,7 @@
 </div>
 
 
-<h1>Favorites</h1>
+<h1 class="page-title">Favorites</h1>
 
 <div class="card-small-container">
   <% @parks.each do |park| %>
@@ -20,7 +20,7 @@
   <% end %>
 </div>
 
-<h1>My Reviews</h1>
+<h1 class="page-title">My Reviews</h1>
   <% if @reviews.any? %>
     <div class="card-small-container">
       <% @reviews.each do |review| %>

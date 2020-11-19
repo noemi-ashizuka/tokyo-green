@@ -32,6 +32,8 @@ gem 'devise'
 gem 'pundit'
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 gem 'cloudinary', '~> 1.12.0'
+gem 'faker'
+gem 'open-uri'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
