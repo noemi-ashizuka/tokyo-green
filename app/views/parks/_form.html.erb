@@ -3,7 +3,7 @@
     <%= f.input :address %>
     <%= f.input :description, as: :text %>
     <%= f.input :opening_hours %>
-    <%= f.input :facilities, collection: Park::FACILITIES, as: :check_boxes, input_html: { multiple: true } %>
+    <%= f.association :facilities, as: :check_boxes, input_html: { multiple: true } %>
     <%= f.input :attractions, collection: Park::ATTRACTIONS, as: :check_boxes, input_html: { multiple: true } %>
     <%= f.input :best_season, collection: Park::BEST_SEASON %>
     <%= f.input :photo, as: :file %>
