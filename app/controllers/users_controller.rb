@@ -22,6 +22,15 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
+  def admin_dashboard
+    @user = current_user
+    if !@user.admin?
+      raise Pundit::NotAuthorizedError
+    else
+      authorize @user
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :photo)

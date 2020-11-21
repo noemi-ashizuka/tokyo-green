@@ -16,4 +16,8 @@ class UserPolicy < ApplicationPolicy
   def update?
     record == user
   end
+
+  def admin_dashboard?
+    user.admin?
+  end
 end
