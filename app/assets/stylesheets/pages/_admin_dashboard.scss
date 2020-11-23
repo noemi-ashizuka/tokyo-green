@@ -1,0 +1,23 @@
+.pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pill {
+  padding: 8px;
+  margin: 8px;
+  border: 1px solid $medium-green;
+  border-radius: 2px;
+  display: flex;
+}
+
+.pill-icon {
+  text-decoration: none;
+  color: $medium-green;
+  padding-left: 4px;
+}
+
+.pill-icon:hover {
+  color: $medium-green;
+  opacity: 50%;
+}
