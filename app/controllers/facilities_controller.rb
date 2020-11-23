@@ -1,8 +1,8 @@
 class FacilitiesController < ApplicationController
-  def new
-    @facility = Facility.new
-    authorize @facility
-  end
+  # def new
+  #   @facility = Facility.new
+  #   authorize @facility
+  # end
 
   def create
     @facility = Facility.new(facility_params)
@@ -24,6 +24,7 @@ class FacilitiesController < ApplicationController
   private
 
   def facility_params
+    # TODO: add icon as photo for a facility
     params.require(:facility).permit(:name, :is_attraction)
   end
 end
