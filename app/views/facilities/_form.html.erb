@@ -1,0 +1,10 @@
+<div class="page-container">
+  <div class="form-group-center">
+    <h1 class="form-title">Create a new facility</h1>
+    <%= simple_form_for @facility do |f| %>
+      <%= f.input :name %>
+      <%= f.input :is_attraction, as: :boolean, checked_value: true, unchecked_value: false, label: "Is it an attraction?"%>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </div>
+</div>

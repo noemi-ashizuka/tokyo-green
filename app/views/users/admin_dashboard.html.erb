@@ -15,10 +15,22 @@
 <h3 class="page-title">All Facilities</h3>
 <div class="pills-wrap page-title">
   <% @facilities.each do |facility| %>
-    <div class="pill"><%= facility.name %> 
-      <%= link_to facility_path(facility), method: "DELETE", class:"pill-icon" do %>
-        <i class="fas fa-times"></i>
-      <% end %>
-    </div>
+    <% if facility.is_attraction %>
+      <div class="pill">
+      <%= facility.name %> 
+        <%= link_to facility_path(facility), method: "DELETE", class:"pill-icon" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="pill-light">
+      <%= facility.name %> 
+        <%= link_to facility_path(facility), method: "DELETE", class:"pill-icon" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
+
+<%= render 'facilities/form' %>

@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def admin_dashboard
     @user = current_user
     @facilities = Facility.all
+    @facility = Facility.new
     if !@user.admin?
       raise Pundit::NotAuthorizedError
     else
