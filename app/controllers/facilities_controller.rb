@@ -14,6 +14,13 @@ class FacilitiesController < ApplicationController
     end
   end
 
+  def destroy
+    @facility = Facility.find(params[:id])
+    @facility.destroy
+    authorize @facility
+    redirect_back(fallback_location: root_path)
+  end
+
   private
 
   def facility_params

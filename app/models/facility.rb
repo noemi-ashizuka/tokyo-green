@@ -1,5 +1,5 @@
 class Facility < ApplicationRecord
-  has_many :park_facilities
+  has_many :park_facilities, dependent: :destroy
 
   def self.all_attractions
     Facility.where("is_attraction")

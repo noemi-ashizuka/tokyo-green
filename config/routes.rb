@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :edit, :update]
-  resources :facilities, only: [:new, :create]
+  resources :facilities, only: [:new, :create, :destroy]
 end
