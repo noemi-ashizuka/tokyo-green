@@ -5,7 +5,7 @@ class SuggestionPolicy < ApplicationPolicy
     end
   end
 
-  def show?
+  def create?
     true
   end
 end
