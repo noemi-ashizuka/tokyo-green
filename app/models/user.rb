@@ -4,6 +4,7 @@ class User < ApplicationRecord
   
   has_many :parks
   has_many :reviews, dependent: :destroy
+  has_many :suggestions, dependent: :destroy
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
   

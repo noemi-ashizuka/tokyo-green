@@ -3,6 +3,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @favs = @user.all_favorites
     @reviews = @user.reviews
+    @suggestions = @user.suggestions
+    @suggestion = Suggestion.new
     @parks = []
     @favs.each do |fav|
       @parks << Park.find(fav.favoritable_id)
