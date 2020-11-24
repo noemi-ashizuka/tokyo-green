@@ -4,7 +4,8 @@ class SuggestionsController < ApplicationController
     @suggestion.user = current_user
     authorize @suggestion
     if @suggestion.save
-      redirect_to 'users/show'
+      flash[:alert] = "Thank you. Your suggestion has been received!"
+      redirect_back(fallback_location: root_path)
     else
       redirect_back(fallback_location: root_path)
     end
