@@ -2,12 +2,29 @@
 <h3 class="page-title">
   Create a park
   <%= link_to new_park_path do %>
-    <i class="fas fa-plus-square"></i>
+    <i class="fas fa-plus-square pill-icon"></i>
   <% end %>
 </h3>
-<h3 class="page-title">
-  Create a facility
-  <%= link_to "#" do %>
-    <i class="fas fa-plus-square"></i>
+
+<h3 class="page-title">All Facilities</h3>
+<div class="pills-wrap page-title">
+  <% @facilities.each do |facility| %>
+    <% if facility.is_attraction %>
+      <div class="pill">
+      <%= facility.name %> 
+        <%= link_to facility_path(facility), method: "DELETE", class:"pill-icon" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="pill-light">
+      <%= facility.name %> 
+        <%= link_to facility_path(facility), method: "DELETE", class:"pill-icon" do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
-</h3>
+</div>
+
+<%= render 'facilities/form' %>

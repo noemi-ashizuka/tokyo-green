@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
       redirect_to park_path(@park)
     else
       flash[:alert] = "Something went wrong. Please try again."
-      render :new
+      redirect_back(fallback_location: root_path)
     end
   end
 
