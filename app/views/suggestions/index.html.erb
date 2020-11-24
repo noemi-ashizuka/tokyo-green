@@ -1,7 +1,11 @@
 <h1 class="page-title">Suggestion box</h1>
 
-<% @suggestions.each do |suggestion| %>
-  <p><%= suggestion.title %></p>
-  <p><%= suggestion.content %></p>
-  <p><%= suggestion.user.username %></p>
-<% end %>
+<div class="card-small-container">
+  <% @suggestions.each do |suggestion| %>
+    <div class="card-suggestion">
+      <h6><%= suggestion.title %></h6>
+      <p><%= suggestion.content %></p>
+      <p>by: <%= suggestion.user.username %></p>
+    </div>
+  <% end %>
+</div>

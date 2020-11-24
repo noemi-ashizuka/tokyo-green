@@ -1,6 +1,10 @@
 class SuggestionsController < ApplicationController
   def index
-    @suggestions = policy_scope(Suggestion.all)
+    if !current_user.admin?
+      raise Pundit::NotAuthorizedError
+    else
+      @suggestions = policy_scope(Suggestion.all)
+    end
   end
   
   def create
