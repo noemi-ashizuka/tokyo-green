@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @user = current_user
     @facilities = Facility.all
     @facility = Facility.new
+    @suggestions = Suggestion.all
     if !@user.admin?
       raise Pundit::NotAuthorizedError
     else

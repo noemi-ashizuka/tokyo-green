@@ -1,4 +1,8 @@
 class SuggestionsController < ApplicationController
+  def index
+    @suggestions = policy_scope(Suggestion.all)
+  end
+  
   def create
     @suggestion = Suggestion.new(suggestion_params)
     @suggestion.user = current_user

@@ -1,0 +1,7 @@
+<h1 class="page-title">Suggestion box</h1>
+
+<% @suggestions.each do |suggestion| %>
+  <p><%= suggestion.title %></p>
+  <p><%= suggestion.content %></p>
+  <p><%= suggestion.user.username %></p>
+<% end %>
