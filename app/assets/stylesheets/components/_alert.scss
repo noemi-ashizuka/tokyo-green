@@ -4,3 +4,9 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert-warning {
+  color: $medium-green;
+  background-color: $light-green;
+  border-color: #c0f5de;
+}

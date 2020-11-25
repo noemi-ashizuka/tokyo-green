@@ -1,0 +1,15 @@
+<h1 class="page-title">Suggestions box</h1>
+<h3 class="page-title">Inbox(<%= @suggestions.count %>)</h3>
+
+<div class="card-small-container">
+  <% @suggestions.each do |suggestion| %>
+    <div class="card-suggestion">
+      <h6><%= suggestion.title %></h6>
+      <p><%= suggestion.content %></p>
+      <p>by: <%= suggestion.user.username %></p>
+      <div class="card-button">
+        <%= link_to "Destroy", suggestion_path(suggestion), method: :delete %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,9 @@
+<div class="form-group-center">
+  <h2>Suggestion Box</h2>
+  <p>Do you know a park that is not on the site yet? Let us know!</p>
+  <%= simple_form_for [@user, suggestion] do |f| %>
+    <%= f.input :title, as: :string, class:"input-line" %>
+    <%= f.input :content, as: :text, class:"input-line" %>
+    <%= f.submit "Send", class: "btn-normal" %>
+  <% end %>
+</div>

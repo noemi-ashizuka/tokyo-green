@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @favs = @user.all_favorites
     @reviews = @user.reviews
+    @suggestion = Suggestion.new
     @parks = []
     @favs.each do |fav|
       @parks << Park.find(fav.favoritable_id)
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
     @user = current_user
     @facilities = Facility.all
     @facility = Facility.new
+    @suggestions = Suggestion.all
     if !@user.admin?
       raise Pundit::NotAuthorizedError
     else
