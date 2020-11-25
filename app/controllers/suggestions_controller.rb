@@ -19,6 +19,17 @@ class SuggestionsController < ApplicationController
     end
   end
 
+  def destroy
+    if !current_user.admin?
+      raise Pundit::NotAuthorizedError
+    else
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.destroy
+    authorize @suggestion
+    redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
 
   def suggestion_params

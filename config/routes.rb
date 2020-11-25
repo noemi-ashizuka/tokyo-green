@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   end
   resources :facilities, only: [:create, :destroy]
 
-  resources :suggestions, only: :index
+  resources :suggestions, only: [:index, :destroy]
 end
