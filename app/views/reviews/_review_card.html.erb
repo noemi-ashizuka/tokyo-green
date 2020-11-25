@@ -1,11 +1,21 @@
 <div class="review-card">
-  <p class="star-rating">
-    <% review.rating.times do %>
-      <i class="fas fa-star"></i>
+  <div class="review-left">
+    <% if review.user.photo.attached? %>
+      <%= cl_image_tag review.user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar" %>
+    <% else %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOut0p3zCtCU9QOj30HH5tVboxRoSPck0mQg&usqp=CAU", class: "avatar" %>
     <% end %>
-    <% (5 - review.rating).times do %>
-      <i class="far fa-star"></i>
-    <% end %>
-  </p>
-  <p class="review-content"><%= review.content %></p>
+    <p class="text-subdue"><%= review.user.username %></p>
+  </div>
+  <div class="review-right">
+    <p class="star-rating">
+      <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </p>
+    <p class="review-content"><%= review.content %></p>
+  </div>
 </div>

@@ -59,19 +59,37 @@
 .review-card {
   background-color: white;
   width: 200px;
-  padding: 24px;
+  padding: 16px;
   margin: 16px;
   display: flex;
-  flex-direction: column;
   border: 1px solid $light-green;
 
-  .star-rating {
-    display: flex;
-    color: $light-green;
-  }
+  .review-left {
+    margin-right: 16px;
 
-  .review-content {
-    font-size: 16px;
+    .avatar {
+    margin-top: 16px;
+    }
+
+    .text-subdue {
+      opacity: 60%;
+      text-align: center;
+    }
+  }
+  
+  .review-right {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    .star-rating {
+      display: flex;
+      color: $light-green;
+    }
+  
+    .review-content {
+      font-size: 16px;
+    }
   }
 }
 
