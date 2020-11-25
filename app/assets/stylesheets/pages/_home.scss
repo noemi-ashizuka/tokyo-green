@@ -1,1 +1,30 @@
-// Specific CSS for your home-page
+.banner-hp {
+  background: linear-gradient(to bottom, rgba(243, 218, 218, 0.4), rgba(240, 203, 203, 0.4)), url("https://images.unsplash.com/photo-1598063183638-4ffe7c5f0f8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") center no-repeat;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .banner-text {
+    margin: 0 auto;
+
+    h1 {
+      font-size: 64px;
+      font-weight: 800;
+      color: $floral-white;
+      text-shadow: 0 0 0 gray;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: 500;
+      color: $floral-white;
+      text-shadow: 0 0 0 gray;
+    }
+
+    .text-green {
+      color: $medium-green;
+      text-shadow: 0 0 0 gray;
+    }
+  }
+}
