@@ -30,9 +30,22 @@
 }
 
 .content-hp {
-  margin-top: 24px;
+  margin-top: 32px;
 
   .text-section-hp {
+    margin-top: 32px;
+    
+    .text-image-wrap {
+      display: flex;
+      align-content: space-between;
+      width: 100%;
+    }
+
+    .right-aligned {
+      text-align: right;
+      margin-right: 340px;
+    }
+
     h1 {
       font-size: 48px;
       font-weight: 500;
@@ -40,6 +53,18 @@
 
     p {
       font-size: 18px;
+    }
+
+    .text {
+      margin-top: 32px;
+    }
+
+    .image-small {
+      svg {
+        padding: 24px;
+        height: 280px;
+        width: 600px;
+      }
     }
   }
 }
