@@ -11,24 +11,41 @@
 
 <h1 class="page-title">Favorites</h1>
 
+<p>
+  <a class="btn btn-green page-title" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    See More
+  </a>
+</p>
+
 <div class="card-small-container">
-  <% @parks.each do |park| %>
+  <% @parks.first(4).each do |park| %>
     <%= link_to park_path(park) do %>
       <%= render 'parks/park_thumb', park: park %>
     <% end %>
   <% end %>
 </div>
 
-<h1 class="page-title">My Reviews</h1>
-  <% if @reviews.any? %>
-    <div class="card-small-container">
-      <% @reviews.each do |review| %>
-        <%= render 'reviews/review_card', review: review %>
+<div class="collapse" id="collapseExample">
+  <div class="card-small-container">
+    <% @parks.drop(4).each do |park| %>
+      <%= link_to park_path(park) do %>
+        <%= render 'parks/park_thumb', park: park %>
       <% end %>
-    </div>
-  <% else %>
-    <p>No reviews yet!</p>
-  <% end %>
+    <% end %>
+  </div>
+</div>
+
+<h1 class="page-title">My Reviews</h1>
+<% if @reviews.any? %>
+  <div class="card-small-container">
+    <% @reviews.last(6).each do |review| %>
+      <%= render 'reviews/review_card', review: review %>
+    <% end %>
+  </div>
+<% else %>
+  <p>No reviews yet!</p>
+<% end %>
+<p>See More</p>
 
 <%= render 'suggestions/form', suggestion: @suggestion %>
 
