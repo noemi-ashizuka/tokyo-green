@@ -1,12 +1,12 @@
 <h1 class="page-title">Profile</h1>
 
-<div class= "card-user page-title">
+<div class="card-user page-title">
   <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <% else %>
     <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQOut0p3zCtCU9QOj30HH5tVboxRoSPck0mQg&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <% end %>
-  <h3><%= @user.username %></h3>
+  <h3 class="card-user-name"><%= @user.username %></h3>
 </div>
 
 <h1 class="page-title">Favorites</h1>
