@@ -36,6 +36,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 24px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .card-small {
@@ -51,9 +55,14 @@
   }
 
   .card-small-title {
+    color: $dark-green;
     padding: 8px;
     line-height: 24px;
     font-size: 18px;
+  }
+
+  &:hover {
+    opacity: 60%;
   }
 }
 
@@ -97,6 +106,11 @@
 .card-user {
   display: flex;
   flex-wrap: wrap;
+
+  .card-user-name {
+    margin: auto 0;
+    margin-left: 4px;
+  }
 }
 
 .card-suggestion {
