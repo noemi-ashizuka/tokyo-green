@@ -1,5 +1,4 @@
 <h1 class="page-title">Profile</h1>
-
 <div class="card-user page-title">
   <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, height: 50, width: 50, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -8,15 +7,12 @@
   <% end %>
   <h3 class="card-user-name"><%= @user.username %></h3>
 </div>
-
 <h1 class="page-title">Favorites</h1>
-
 <p>
   <a class="btn btn-green page-title" data-toggle="collapse" href="#collapseFav" role="button" aria-expanded="false" aria-controls="collapseFav">
     See More
   </a>
 </p>
-
 <% if @parks.any? %>
   <div class="card-small-container">
     <% @parks.first(4).each do |park| %>
@@ -25,7 +21,6 @@
       <% end %>
     <% end %>
   </div>
-
   <div class="collapse" id="collapseFav">
     <div class="card-small-container">
       <% @parks.drop(4).each do |park| %>
@@ -38,34 +33,29 @@
 <% else %>
   <p>No reviews yet!</p>
 <% end %>
-
 <h1 class="page-title">My Reviews</h1>
 <p>
   <a class="btn btn-green page-title" data-toggle="collapse" href="#collapseReviews" role="button" aria-expanded="false" aria-controls="collapseReviews">
     See More
   </a>
 </p>
-
 <% if @reviews.any? %>
   <div class="card-small-container">
     <% @reviews.first(6).each do |review| %>
       <%= render 'reviews/review_card', review: review %>
     <% end %>
   </div>
-
   <div class="collapse" id="collapseFav">
     <div class="card-small-container">
       <% @reviews.drop(6).each do |review| %>
-      <%= render 'reviews/review_card', review: review %>
-    </div>
+        <%= render 'reviews/review_card', review: review %>
+      </div>
     <% end %>
   </div>
 <% else %>
   <p>No reviews yet!</p>
 <% end %>
-
 <%= render 'suggestions/form', suggestion: @suggestion %>
-
 <% if @user == current_user %>
   <p><%= link_to "Edit profile", edit_user_path %></p>
 <% end %>

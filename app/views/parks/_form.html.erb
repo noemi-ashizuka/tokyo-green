@@ -1,7 +1,7 @@
- <%= simple_form_for @park do |f| %>
+ <div data-controller="emails">
+  <%= simple_form_for(@park, local: true) do |f| %>
     <%= f.input :name %>
     <%= f.input :address %>
-    <%= f.input :description, as: :text %>
     <%= f.input :opening_hours %>
     <%= f.association :facilities, collection: Facility.all_facilities, as: :check_boxes, input_html: { multiple: true } %>
     <%= f.association :facilities, collection: Facility.all_attractions, as: :check_boxes, input_html: { multiple: true }, label: "Attractions" %>
@@ -9,4 +9,9 @@
     <%= f.input :photo, as: :file %>
     <%= f.submit "Submit" %>
   <% end %>
+</div>
+
+<!-- <form data-controller="emails">
+    <textarea data-target="emails.box"></textarea>
+  </form> -->
   

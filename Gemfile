@@ -34,10 +34,12 @@ gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
 gem 'cloudinary', '~> 1.12.0'
 gem 'faker'
 gem 'open-uri'
+gem 'turbolinks_render'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
