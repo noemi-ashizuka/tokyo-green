@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="form-group-center">
     <h1 class="form-title">Create a new park</h1>
-    <% if current_user.admin? %>
+    <% if policy(Park).new? %>
       <%= render 'parks/form' %>
     <% else %>
       <p>Only the admin can create a new park.</p>
