@@ -1,4 +1,7 @@
 class Park < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+  
   validates :name, :address, presence: true
   belongs_to :admin, class_name: "User", foreign_key: "user_id"
   has_many :reviews, dependent: :destroy
