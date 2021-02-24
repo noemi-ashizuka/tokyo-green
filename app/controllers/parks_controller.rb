@@ -3,8 +3,15 @@ class ParksController < ApplicationController
   skip_after_action :verify_policy_scoped, only: [:index, :show]
   
   def index
-    @parks = Park.all
+    # @parks = Park.all
     @parks = policy_scope(Park)
+
+    @markers = @parks.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
