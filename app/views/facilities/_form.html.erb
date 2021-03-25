@@ -4,8 +4,9 @@
     <%= simple_form_for @facility do |f| %>
       <%= f.input :name %>
       <%= f.input :is_attraction, as: :boolean, checked_value: true, unchecked_value: false, label: "Is it an attraction?"%>
-      <%= f.input :photo, as: :file, label: "Icon"%>
+      <%= f.input :icon, label: 'Insert the html for the icon you want to use *' %>
       <%= f.submit "Submit" %>
     <% end %>
+    <p>*Suggested websites: <a href="https://yannklein.github.io/japan-pictograms/index.html" target="_blank">Japan Pictograms</a>, <a href="https://fontawesome.com/" target="_blank">Fontawesome</a></p>
   </div>
 </div>

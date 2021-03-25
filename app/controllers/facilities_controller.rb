@@ -25,6 +25,6 @@ class FacilitiesController < ApplicationController
 
   def facility_params
     # TODO: add icon as photo for a facility
-    params.require(:facility).permit(:name, :is_attraction)
+    params.require(:facility).permit(:name, :icon, :is_attraction)
   end
 end
