@@ -22,5 +22,10 @@
         <%= render 'parks/fav_button', park: @park %>
       <% end %>
     <% end %>
+    <% if policy(park).edit? %>
+      <%= link_to "Update park", edit_park_path(@park), class: 'btn btn-green' %>
+    <% end %>
   </div>
 </div>
+
+
