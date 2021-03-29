@@ -23,7 +23,9 @@
       <% end %>
     <% end %>
     <% if policy(park).edit? %>
-      <%= link_to "Update park", edit_park_path(@park), class: 'btn btn-green' %>
+      <%= link_to edit_park_path(@park) do %>
+        <i class="fas fa-wrench"></i>
+      <% end %>
     <% end %>
   </div>
 </div>

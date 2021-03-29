@@ -49,6 +49,11 @@ class ParksController < ApplicationController
     end
   end
 
+  def destroy
+    @park.destroy
+    redirect_to parks_path
+  end
+
   def update
     @park = Park.find(params[:id])
     authorize @park
