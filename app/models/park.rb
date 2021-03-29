@@ -5,7 +5,7 @@ class Park < ApplicationRecord
   validates :name, :address, presence: true
   belongs_to :admin, class_name: "User", foreign_key: "user_id"
   has_many :reviews, dependent: :destroy
-  has_many :park_facilities
+  has_many :park_facilities, dependent: :destroy
   has_many :facilities, through: :park_facilities
   has_one_attached :photo
 

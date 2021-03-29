@@ -24,7 +24,12 @@
     <% end %>
     <% if policy(park).edit? %>
       <%= link_to edit_park_path(@park) do %>
-        <i class="fas fa-wrench"></i>
+        <i class="fas fa-wrench icon-big"></i>
+      <% end %>
+    <% end %>
+    <% if policy(park).destroy? %>
+      <%= link_to park_path, method: :delete do %>
+        <i class="fas fa-trash-alt icon-big"></i>
       <% end %>
     <% end %>
   </div>

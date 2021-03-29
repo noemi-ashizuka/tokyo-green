@@ -1,4 +1,5 @@
 class ParksController < ApplicationController
+  before_action :set_park, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show, :toggle_favorite]
   skip_after_action :verify_policy_scoped, only: [:index, :show]
   
@@ -15,7 +16,6 @@ class ParksController < ApplicationController
   end
 
   def show
-    @park = Park.find(params[:id])
     @review = Review.new
     authorize @park
   end
@@ -44,18 +44,17 @@ class ParksController < ApplicationController
     if !current_user.admin?
       raise Pundit::NotAuthorizedError
     else
-      @park = Park.find(params[:id])
       authorize @park
     end
   end
 
   def destroy
     @park.destroy
+    authorize @park
     redirect_to parks_path
   end
 
   def update
-    @park = Park.find(params[:id])
     authorize @park
     @park.update(park_params)
     redirect_to park_path(@park)
@@ -68,7 +67,7 @@ class ParksController < ApplicationController
       format.html { redirect_to :back }
       format.js
     end
-      authorize @park
+    authorize @park
   end
 
 
@@ -80,5 +79,9 @@ class ParksController < ApplicationController
 
   def authorize_create
     authorize @park if current_user.admin?
+  end
+
+  def set_park
+    @park = Park.find(params[:id])
   end
 end
