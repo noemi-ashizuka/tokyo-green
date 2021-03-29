@@ -40,6 +40,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
+gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

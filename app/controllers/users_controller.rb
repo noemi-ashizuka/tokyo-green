@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @favs = @user.all_favorites
     @reviews = @user.reviews
     @suggestion = Suggestion.new

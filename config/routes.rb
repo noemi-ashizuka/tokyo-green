@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       post "toggle_favorite", to: "parks#toggle_favorite", as: :toggle_favorite
     end
   end
-  
+
   resources :users, only: [:show, :edit, :update] do
     resources :suggestions, only: [:create]
   end

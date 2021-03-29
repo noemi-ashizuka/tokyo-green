@@ -11,6 +11,10 @@ ATTRACTIONS = ["large lawn", "boat riding", "historical site", "nature reserve",
 park_names = ["Tamagawadai", "Todoroki Ravine", "Yoyogi Park", "Ueno Park", "Komazawa Park", "Kinuta Park", ]
 BEST_SEASON = ["summer", "autumn", "spring", "winter"]
 
+# TODO: add icons to facilities
+# TODO: add avatar to user
+# TODO: add actual photos, descriptions and addresses to parks
+
 puts "Creating users"
 noemi = User.create!(
   username: "Noemi",
