@@ -9,28 +9,19 @@ class ParkPolicy < ApplicationPolicy
     true
   end
 
-  # def new?
-  #   create?
-  # end
-
   def create?
     user.admin?
   end
 
-  # def edit?
-  #   update?
-  # end
-
   def update?
-    user.admin?
+    user&.admin?
   end
 
   def destroy?
-    user.admin?
+    update?
   end
 
   def toggle_favorite?
     true
   end
- 
 end

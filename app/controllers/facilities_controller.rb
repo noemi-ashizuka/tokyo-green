@@ -1,9 +1,4 @@
 class FacilitiesController < ApplicationController
-  # def new
-  #   @facility = Facility.new
-  #   authorize @facility
-  # end
-
   def create
     @facility = Facility.new(facility_params)
     authorize @facility
